@@ -1,0 +1,55 @@
+# backend setup -----------------
+1st create a virtual envirment on the route directory on self.
+python -m venv env
+
+2nd create backend, frontend folder.
+
+3rd active virtual envirment.
+source env/bin/activate
+
+4th go to backend directory.
+cd backend
+
+5th install django.
+pip install django
+
+6th create a django project.
+django-admin startproject stock_prediction_main(project_name) .
+
+7th django server run.
+python manage.py runserver
+
+8th store secret info safely in django. (before push code in github its important)
+use python-decouple help to store secret info safely.
+ a - pip install python-decouple
+ b - create .env file in backend folder
+ c - from decouple import config in settings.py
+ d - make change SECRET_KEY = config('SECRET_KEY'), and we need to add this SECRET_KEY inside the .env file
+ e - .env file add SECRET_KEY = 'SECRET_KEY'
+ f - djangos SECRET_KEY is insecure, so we create one real SECRET_KEY not insecure SECRET_KEY
+ g - go to https://djecrety.ir/ website and generate real SECRET_KEY not use django insecure SECRET_KEY 
+
+
+
+
+
+
+# frontend setup ------------------
+go new terminal
+1st go to frontend directory.
+cd frontend
+
+2nd install react using vite.
+npm create vite@latest
+all file in project name folder move in frontend and delete project name folder 
+
+3rd install package and run react.
+npm install
+npm run dev
+
+4th make clean envirment of react.
+public folder, delete all files.
+index.html file, update name to our project. delete svg link.
+src folder, app.css clear all data. index.css delete file. app.jsx clear all data and make empty fragment. main.jsx nothing to change only delete link of html.css.
+
+
