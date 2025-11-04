@@ -27,8 +27,40 @@ use python-decouple help to store secret info safely.
  d - make change SECRET_KEY = config('SECRET_KEY'), and we need to add this SECRET_KEY inside the .env file
  e - .env file add SECRET_KEY = 'SECRET_KEY'
  f - djangos SECRET_KEY is insecure, so we create one real SECRET_KEY not insecure SECRET_KEY
- g - go to https://djecrety.ir/ website and generate real SECRET_KEY not use django insecure SECRET_KEY 
+ g - go to https://djecrety.ir/ website, and generate real SECRET_KEY not use django insecure SECRET_KEY, copy it and past in .env file
+ h - we can also store the debug status in .env file
+ i - make change DEBUG = config('DEBUG', default=False, cast=bool), and .env add DEBUG= True
 
+9th backend login sinup setup after react 6th part, make default django setup.
+
+10th Migrate & Create Superuser
+-run python manage.py migrate, and
+after that run default database tables will be created.
+- run python manage.py createsuperuser, for login into a admin panal, and 
+create the superuser, username:madhu, email:madhu@gmail.com, password: madhu12.
+than, go to the admin page and login .
+
+11th installing django REST framework and setup.
+pip install djangorestframework
+in settings.py add rest_framework to your installed_apps.
+backend we create 2 apps one for the user, and one for the api.
+run this, python manage.py startapp accounts{appName}, in accounts app we will handle a registration and login way. after run accounts folder create in backend.
+run thi,  python manage.py startapp api{appName}, in api app we will use for creating a apis endpoint, 
+lets, go to settings whene we create any apps we need to register into install_app, add accounts and api.
+
+12th using serializer/ make login and registration functionality for our portal.
+let start with setting of the registration from the backend, 
+whene use drf we need to follow some steps to handle backend and frontend, first we need to create apis, and after we consume the apis, we need to first create apis from the backend, and after that we need to consume the apis from the frontend. 
+for creating a apis we need to follow some steps, first will have to create Model, and Model we need to make a serialization, and than views, and than setup the urls, and than finally test the apis froms the django browsabla api interface, whene everything is good at api level than consume it at frontend.
+now, first we handle a registration api, 
+ 1- model is created default django so 
+ 2- we create serializers.py in accounts folder,
+ 3- create a views, go accounts folder views.py 
+
+13th Api urls pattern
+create urls pattern for our registration.
+go to stock_prediction_main -> urls.py create based urls for our api
+go to api and create urls.py 
 
 
 
@@ -52,4 +84,34 @@ public folder, delete all files.
 index.html file, update name to our project. delete svg link.
 src folder, app.css clear all data. index.css delete file. app.jsx clear all data and make empty fragment. main.jsx nothing to change only delete link of html.css.
 
+5th add css Bootstrap
+search Bootstrap CDN and copy link <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+and past it in index.html, and remove from link integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous
+and js CDN copy link of script <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+and past it in before body end tag. and remove from link integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+we can also use costume css, go src -> assets -> make css folder -> make style.css file.
 
+6th Components setup
+make new folder Components in src folder, inside this folder create Components, header.jsx, main.jsx, footer.jsx
+ a -  Header Component Design 
+ b - Main Component Design
+ c - Footer Component
+ d - Button Component and use in above 3 files with props.
+
+->github push  ->git add . ->git commit -m "Homepage react"-> git push origin main
+
+
+
+
+
+
+# git setu -------------------------
+1st create .gitignore file.
+2nd search generate gitignore, and select django and react and create, and copy evarything and past in .gitignore file.
+3rd initialize git repository in github account.(create new repo)
+4th initialize git repository in route directory vs code.(git init)
+5th git add .
+6th git commit -m 'first commit'
+7th git branch -M main https://github.com/madhu45-cell/stock-prediction-portal.git
+8th git remote add origin https://github.com/madhu45-cell/stock-prediction-portal.git
+9th git push -u origin main
