@@ -62,7 +62,16 @@ create urls pattern for our registration.
 go to stock_prediction_main -> urls.py create based urls for our api
 go to api and create urls.py 
 
+->github push  ->git add -A ->git commit -m "registration backend/api"-> git push origin main
 
+14th pip install django-cors-headers
+ after that in settings.py
+ add corsheaders in installed_apps
+ and add corsheaders.middleware.CorsMiddleware in middleware
+ edit at the end of file in,
+ CORS_ALLOW_ORIGINS =[past link from frontend]
+  
+during 12th frontend
 
 
 
@@ -93,16 +102,68 @@ we can also use costume css, go src -> assets -> make css folder -> make style.c
 
 6th Components setup
 make new folder Components in src folder, inside this folder create Components, header.jsx, main.jsx, footer.jsx
- a -  Header Component Design 
- b - Main Component Design
- c - Footer Component
- d - Button Component and use in above 3 files with props.
+ a -  Header.jsx Component Design 
+ b - Main.jsx Component Design
+ c - Footer.jsx Component
+ d - Button.jsx Component and use in above 3 files with props.
 
 ->github push  ->git add . ->git commit -m "Homepage react"-> git push origin main
 
+7th after backend 12th,  consume the register/api from backend to frantend 
+
+8th Creating Routes in react
+start working on the registration page,
+create register.jsx file in Components folder, and make registration page.
+ - create a routes of react for registration
+   we use react-router-dom
+   install react-router-dom package in frontend, npm i react-router-dom . chack package.json dependencies.
+   now create react-route-dom.
+in app.jsx, import { BrowserRouter, Routes, Route } from 'react-router-dom'
+and use react-route-dom, below structure.
+<>
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Main/>}/>
+        </Routes>
+    </BrowserRouter>
+</>
+add Header and footer Component below <BrowserRouter> to show Header at every page.
+add register.jsx file path to app.jsx react-route-dom, for register page
 
 
+9th Using the Link component to navigate
+now click any button/logo/Components to go that page , we use this.
+ - go to header.jsx 
+   in react, we does not use <a> anchar tag, we use <Link> is a component that provide by react-route-dom
+   first import {Link} from 'react-route-dom' , and change <a> tag with <Link> component, and href='' change with to='{in this we give path link where to go}'
+ - go to Button.jsx 
+   do same, make it react-route-dom
+   during props, we use url= "path of Button go to which page " in header.jsx register Button, and we use to={props.to}, only in case of props when multiple use of anuy component.
+   (create also login.jsx component) 
 
+
+10th design register page.
+we will have one form with three feild, username, email, password.
+create register.jsx page
+
+11th Registration feature {important}
+how can eccept the data from frontend register page and how to send that data to this api endpoint and get the user register.(connect frontend to backend)
+1 - take the input from the user and than send the api request to the backend, using the POST request
+1 - we need a state, we want to store the user data in the state, import state from react{import {useState} from react}
+
+12th using axios {important connect frontend and backend}
+send user data object frontend to backend api endpoint
+1 - install axios in react
+    npm i axios , chack package.json dependencies.
+2 - import axios in register.jsx file 
+    use try block and catch(error)
+    try{
+      axios.post(past_link, pass_userData){copy backend api page link and past it}
+
+    }catch(error){
+
+    }
+3 - adding cors header
 
 
 # git setu -------------------------
