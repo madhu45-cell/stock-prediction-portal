@@ -1,13 +1,8 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ],
-  "buildCommand": "chmod +x frontend/vercel-build.sh && ./frontend/vercel-build.sh",
+  "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
-  "framework": "vite",
+  "installCommand": "cd frontend && npm install --no-optional",
+  "framework": null,
   "env": {
     "VITE_API_URL": "https://stockai-backend.onrender.com/api/v1"
   }

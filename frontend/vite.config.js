@@ -17,5 +17,8 @@ export default defineConfig({
     sourcemap: false,
     minify: false,  // ✅ Disable minification completely
     target: 'es2020'
+  },
+  esbuild: {
+    minify: false  // ✅ Also disable esbuild minification
   }
 })
