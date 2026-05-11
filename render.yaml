@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: stockai-backend
+    runtime: python
+    repo: https://github.com/YOUR_USERNAME/stock-prediction-portal
+    plan: free
+    region: oregon
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && gunicorn main:app -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: https://stockai-frontend.vercel.app
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: false
