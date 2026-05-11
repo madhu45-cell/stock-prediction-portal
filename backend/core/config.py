@@ -15,7 +15,6 @@ class Config:
     
     @property
     def DATABASE_URL(self):
-        # For Render PostgreSQL
         database_url = os.getenv("DATABASE_URL")
         if database_url:
             return database_url
@@ -35,5 +34,13 @@ class Config:
     
     # CORS
     CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:5173,https://stockai-frontend.vercel.app").split(",")
+    
+    # Email Configuration (Add these missing attributes)
+    EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.gmail.com")
+    EMAIL_PORT = int(os.getenv("EMAIL_PORT", "587"))
+    EMAIL_USERNAME = os.getenv("EMAIL_USERNAME", "")
+    EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD", "")
+    EMAIL_FROM = os.getenv("EMAIL_FROM", "")
+    EMAIL_FROM_NAME = os.getenv("EMAIL_FROM_NAME", "StockAI Platform")
 
 config = Config()
