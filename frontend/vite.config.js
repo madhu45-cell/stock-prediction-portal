@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-oxc'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
@@ -15,6 +15,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'esbuild'  // Use esbuild instead of terser (no extra dependency)
+    minify: 'esbuild',  // ✅ Use esbuild (no extra dependency)
+    target: 'es2020'
   }
 })
