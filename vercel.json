@@ -5,10 +5,9 @@
       "destination": "/"
     }
   ],
-  "buildCommand": "cd frontend && npm install && npm run build",
+  "buildCommand": "chmod +x frontend/vercel-build.sh && ./frontend/vercel-build.sh",
   "outputDirectory": "frontend/dist",
   "framework": "vite",
-  "installCommand": "cd frontend && npm install",
   "env": {
     "VITE_API_URL": "https://stockai-backend.onrender.com/api/v1"
   }
