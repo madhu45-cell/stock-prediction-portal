@@ -15,7 +15,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'esbuild',  // ✅ Use esbuild (no extra dependency)
+    minify: false,  // ✅ Disable minification completely
     target: 'es2020'
   }
 })
