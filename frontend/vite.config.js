@@ -15,10 +15,11 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: false,  // ✅ Disable minification completely
-    target: 'es2020'
-  },
-  esbuild: {
-    minify: false  // ✅ Also disable esbuild minification
+    minify: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   }
 })
